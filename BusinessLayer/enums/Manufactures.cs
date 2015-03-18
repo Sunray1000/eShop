@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.enums
+namespace eShop.enums
 {
-    enum Manufacturers
+    public enum Manufacturers
     {
 	ABS_Computer_Technologies_Parent_Newegg,
 	Acer,

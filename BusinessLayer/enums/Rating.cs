@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.enums
+namespace eShop.enums
 {
-    enum Rating
+    public enum Rating
     {
         Unrated = 0,
         OneStar = 1,

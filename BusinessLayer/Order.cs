@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Useful.Money;
 
-namespace BusinessLayer
+namespace eShop.DomainClasses
 {
     class Order
     {
@@ -30,5 +31,10 @@ namespace BusinessLayer
 
         public int AddressId;
         public Address Address;
+
+        public Money TotalPrice
+        {
+            get { return _products.Sum(); }
+        }
     }
 }

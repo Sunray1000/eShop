@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.enums
+namespace eShop.enums
 {
-    enum ProductCategories
+    public enum ProductCategories
     {
         HardDisk = 1,
         Case = 2,

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security;
-using BusinessLayer.enums;
+using eShop.enums;
 
-namespace BusinessLayer
+namespace eShop.DomainClasses
 {
     public class Customer
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessLayer.enums;
+using eShop.enums;
 
-namespace BusinessLayer
+namespace eShop.DomainClasses
 {
     public class Address
     {

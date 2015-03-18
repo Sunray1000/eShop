@@ -52,3 +52,4 @@ D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\Microsoft.Owin.Secu
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\obj\Debug\eShop.dll
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\obj\Debug\eShop.pdb
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\obj\Debug\eShop.csprojResolveAssemblyReference.cache

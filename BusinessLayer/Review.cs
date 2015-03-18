@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessLayer.enums;
+using eShop.enums;
 
-namespace BusinessLayer
+namespace eShop.DomainClasses
 {
-    class Review
+    public class Review
     {
         public int CustomerId;
         public Customer Customer;

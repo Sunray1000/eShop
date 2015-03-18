@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop", "eShop\eShop.csproj", "{4D34B5E1-AEEC-497F-8693-DBBA7657E89F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B988141F-1258-4466-AF53-DCEE43BC8C44} = {B988141F-1258-4466-AF53-DCEE43BC8C44}
+		{AB413157-8485-446B-8A5B-1E57290E4B0D} = {AB413157-8485-446B-8A5B-1E57290E4B0D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.DomainClasses", "BusinessLayer\eShop.DomainClasses.csproj", "{B988141F-1258-4466-AF53-DCEE43BC8C44}"
 EndProject

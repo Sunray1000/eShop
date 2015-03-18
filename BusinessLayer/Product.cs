@@ -4,12 +4,12 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessLayer.enums;
+using eShop.enums;
 using Useful.Money;
 
-namespace BusinessLayer
+namespace eShop.DomainClasses
 {
-    class Product
+    public class Product
     {
         Product()
         {
