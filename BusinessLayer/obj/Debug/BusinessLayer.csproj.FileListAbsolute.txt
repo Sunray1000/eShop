@@ -1,7 +1,0 @@
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\BusinessLayer\bin\Debug\BusinessLayer.dll
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\BusinessLayer\bin\Debug\BusinessLayer.pdb
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\BusinessLayer\obj\Debug\BusinessLayer.dll
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\BusinessLayer\obj\Debug\BusinessLayer.pdb
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\BusinessLayer\bin\Debug\Useful.Money.dll
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\BusinessLayer\bin\Debug\Useful.Money.pdb
