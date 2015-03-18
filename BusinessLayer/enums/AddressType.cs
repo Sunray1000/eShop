@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessLayer.enums
+{
+    public enum AddressType
+    {
+        Billing = 1,
+        Delivery = 2,
+    }
+}
