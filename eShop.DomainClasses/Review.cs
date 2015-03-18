@@ -11,8 +11,9 @@ namespace eShop.DomainClasses
     public class Review
     {
         [Key]
-        public int CustomerId;
+        public int ReviewId;
         public Customer Customer;
+        public int CustomerId;
         public DateTime ReviewDateTime;
         public string ReviewDescription;
         public Rating StarRating;

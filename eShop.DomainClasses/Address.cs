@@ -10,7 +10,7 @@ namespace eShop.DomainClasses
 {
     public class Address
     {
-        [Key]
+        [Key] 
         public int AddressId;
         public string Name;
         public string AddressLine1;
