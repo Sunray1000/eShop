@@ -4,17 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using eShop.enums;
 
 namespace eShop.DomainClasses
 {
-    public class Review
+    public class OrderItems
     {
         [Key]
-        public int CustomerId;
-        public Customer Customer;
-        public DateTime ReviewDateTime;
-        public string ReviewDescription;
-        public Rating StarRating;
+        public int OrderItemsId;
+        public int OrderId;
+        public int ProductId;
+        public Product ProductOrdered;
+        public int Quantity;
     }
 }

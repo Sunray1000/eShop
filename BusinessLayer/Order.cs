@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,8 +8,9 @@ using Useful.Money;
 
 namespace eShop.DomainClasses
 {
-    class Order
+    public class Order
     {
+        [Key]
         public int OrderId;
 
         public int CustomerId;
@@ -18,15 +20,16 @@ namespace eShop.DomainClasses
 
         public Order()
         {
-            _products = new List<Product>();
+            _orderItems = new List<OrderItems>();
+            OrderDateTime = DateTime.UtcNow;
         }
 
-        private List<Product> _products;
+        private List<OrderItems> _orderItems;
 
-        public ICollection<Product> Products
+        public ICollection<OrderItems> OrderItems
         {
-            get { return _products;}
-            set { _products = new List<Product>(value); }
+            get { return _orderItems;}
+            set { _orderItems = (List<OrderItems>)value; }
         }
 
         public int AddressId;
@@ -34,7 +37,7 @@ namespace eShop.DomainClasses
 
         public Money TotalPrice
         {
-            get { return _products.Sum(); }
+            get { return _orderItems.Sum(); }
         }
     }
 }

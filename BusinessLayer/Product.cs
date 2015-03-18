@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace eShop.DomainClasses
             _specification = new List<string>();
         }
 
+        [Key]
         public int ProductId;
         public string Name;
         public Manufacturers Manufacturer;

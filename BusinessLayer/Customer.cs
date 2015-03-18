@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,23 +14,25 @@ namespace eShop.DomainClasses
     {
         Customer()
         {
-            _address = new List<Address>();
+            Addresses = new List<Address>();
         }
-
-        private ICollection<Address> _address;
-        public int CustomerID;
+        [Key]
+        public int CustomerId;
         public string FirstName;
         public string LastName;
         public string UserName;
-        public SecureString password;
-        public string Email;
+       
+        private List<ContactDetail> _contactDetails;
+       
+        public SecureString Password;
 
-        public ICollection<Address> Addresses
+        public ICollection<Address> Addresses { get; set; }
+
+        public ICollection<ContactDetail> ContactDetails
         {
-            get{ return _address; }
-            set{ _address = value; }
+            get { return _contactDetails; }
+            set { _contactDetails = (List<ContactDetail>) value; }
         }
-
 
     }
 
