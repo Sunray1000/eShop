@@ -1,4 +1,0 @@
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\Money\Useful.Money\bin\Debug\Useful.Money.dll
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\Money\Useful.Money\bin\Debug\Useful.Money.pdb
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\Money\Useful.Money\obj\Debug\Useful.Money.dll
-D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\Money\Useful.Money\obj\Debug\Useful.Money.pdb
