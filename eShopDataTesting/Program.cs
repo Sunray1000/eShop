@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using eShop.DataLayer;
+using eShop.DataLayer.Migrations;
 using eShop.DomainClasses;
 
 
@@ -14,7 +16,9 @@ namespace eShopDataTesting
     {
         static void Main(string[] args)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<eShopContext,Configuration>());
             ICollection<Customer> customers = GetCustomers();
+
 
             foreach (var customer in customers)
             {

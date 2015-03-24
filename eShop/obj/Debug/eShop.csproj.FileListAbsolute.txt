@@ -53,3 +53,9 @@ D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\Microsoft.Owin.Secu
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\obj\Debug\eShop.dll
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\obj\Debug\eShop.pdb
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\obj\Debug\eShop.csprojResolveAssemblyReference.cache
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\eShop.DataLayer.dll
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\eShop.DomainClasses.dll
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\Useful.Money.dll
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\eShop.DataLayer.pdb
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\eShop.DomainClasses.pdb
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\Useful.Money.pdb

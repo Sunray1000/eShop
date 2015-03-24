@@ -6,13 +6,13 @@ namespace eShop.DomainClasses
 {
     public static class MoneyExtension
     {
-        public static Money Sum(this IEnumerable<OrderItems> source ) 
+        public static Money Sum(this IEnumerable<OrderItem> source ) 
         {
             Money returnValue = new Money(0.0);
 
             if (source != null)
             {
-                foreach (OrderItems value in source)
+                foreach (OrderItem value in source)
                 {
                     checked
                     {

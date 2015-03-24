@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eShop.DomainClasses
 {
-    public class OrderItems
+    public class OrderItem
     {
         public int OrderItemsId { get; set; }
         public int OrderId { get; set; }

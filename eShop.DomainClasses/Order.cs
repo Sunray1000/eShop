@@ -20,16 +20,16 @@ namespace eShop.DomainClasses
 
         public Order()
         {
-            _orderItems = new List<OrderItems>();
+            _orderItems = new List<OrderItem>();
             OrderDateTime = DateTime.UtcNow;
         }
 
-        private List<OrderItems> _orderItems;
+        private List<OrderItem> _orderItems;
 
-        public ICollection<OrderItems> OrderItems
+        public ICollection<OrderItem> OrderItems
         {
             get { return _orderItems;}
-            set { _orderItems = (List<OrderItems>)value; }
+            set { _orderItems = (List<OrderItem>)value; }
         }
 
         public int AddressId { get; set; }

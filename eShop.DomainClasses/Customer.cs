@@ -12,10 +12,11 @@ namespace eShop.DomainClasses
 {
     public class Customer
     {
-        Customer()
+        public Customer()
         {
             Addresses = new List<Address>();
             _contactDetails = new List<ContactDetail>();
+            _customerReviews = new List<Review>();
         }
 
         public int CustomerId { get; set; }
@@ -39,6 +40,8 @@ namespace eShop.DomainClasses
             get { return _customerReviews.Where(c => c.CustomerId == this.CustomerId).ToList(); }
             set { _customerReviews = (List<Review>) value; }
         }
+
+        public byte[] RowVersion { get; set; }
 
     }
 

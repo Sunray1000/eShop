@@ -16,6 +16,7 @@ namespace eShop.DomainClasses
         {
             _reviews = new List<Review>();
             _specification = new List<string>();
+            Price = new Money();
         }
 
         public int ProductId { get; set; }
@@ -25,10 +26,8 @@ namespace eShop.DomainClasses
         public string Colour { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
-
         public ProductCategories Category { get; set; }
         public Money Price { get; set; }
-
         private List<string> _specification;
 
         public int ReviewId { get; set; }
