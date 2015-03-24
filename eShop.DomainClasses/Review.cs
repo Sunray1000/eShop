@@ -11,11 +11,11 @@ namespace eShop.DomainClasses
     public class Review
     {
         [Key]
-        public int ReviewId;
-        public Customer Customer;
-        public int CustomerId;
-        public DateTime ReviewDateTime;
-        public string ReviewDescription;
-        public Rating StarRating;
+        public int ReviewId { get; set; }
+        public Customer Customer { get; set; }
+        public int CustomerId { get; set; }
+        public DateTime ReviewDateTime { get; set; }
+        public string ReviewDescription { get; set; }
+        public Rating StarRating { get; set; }
     }
 }

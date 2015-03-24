@@ -15,23 +15,29 @@ namespace eShop.DomainClasses
         Customer()
         {
             Addresses = new List<Address>();
+            _contactDetails = new List<ContactDetail>();
         }
-        [Key]
-        public int CustomerId;
-        public string FirstName;
-        public string LastName;
-        public string UserName;
-       
-        private List<ContactDetail> _contactDetails;
-       
-        public SecureString Password;
+
+        public int CustomerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string UserName { get; set; }
 
         public ICollection<Address> Addresses { get; set; }
 
+        private List<ContactDetail> _contactDetails;
         public ICollection<ContactDetail> ContactDetails
         {
             get { return _contactDetails; }
             set { _contactDetails = (List<ContactDetail>) value; }
+        }
+
+        private List<Review> _customerReviews;
+
+        public ICollection<Review> CustomerReviews
+        {
+            get { return _customerReviews.Where(c => c.CustomerId == this.CustomerId).ToList(); }
+            set { _customerReviews = (List<Review>) value; }
         }
 
     }

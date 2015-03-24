@@ -18,23 +18,21 @@ namespace eShop.DomainClasses
             _specification = new List<string>();
         }
 
-        [Key]
-        public int ProductId;
-        public string Name;
-        public Manufacturers Manufacturer;
-        public string ManufactureProductId;
-        public string Colour;
-        public string ShortDescription;
-        public string LongDescription;
-        
-        public ProductCategories Category;
-        public Money Price;
+        public int ProductId { get; set; }
+        public string Name { get; set; }
+        public Manufacturers Manufacturer { get; set; }
+        public string ManufactureProductId { get; set; }
+        public string Colour { get; set; }
+        public string ShortDescription { get; set; }
+        public string LongDescription { get; set; }
+
+        public ProductCategories Category { get; set; }
+        public Money Price { get; set; }
 
         private List<string> _specification;
 
-        public int ReviewId;
+        public int ReviewId { get; set; }
         private List<Review> _reviews;
-        
         public ICollection<Review> Reviews
         {
             get { return _reviews;}

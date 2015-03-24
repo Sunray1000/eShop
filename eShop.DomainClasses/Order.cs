@@ -11,12 +11,12 @@ namespace eShop.DomainClasses
     public class Order
     {
         [Key]
-        public int OrderId;
+        public int OrderId { get; set; }
 
-        public int CustomerId;
-        public Customer Customer;
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
 
-        public DateTime OrderDateTime;
+        public DateTime OrderDateTime { get; set; }
 
         public Order()
         {
@@ -32,8 +32,8 @@ namespace eShop.DomainClasses
             set { _orderItems = (List<OrderItems>)value; }
         }
 
-        public int AddressId;
-        public Address Address;
+        public int AddressId { get; set; }
+        public Address DeliveryAddress { get; set; }
 
         public Money TotalPrice
         {

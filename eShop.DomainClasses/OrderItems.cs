@@ -9,11 +9,10 @@ namespace eShop.DomainClasses
 {
     public class OrderItems
     {
-        [Key]
-        public int OrderItemsId;
-        public int OrderId;
-        public int ProductId;
-        public Product ProductOrdered;
-        public int Quantity;
+        public int OrderItemsId { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public Product ProductOrdered { get; set; }
+        public int Quantity { get; set; }
     }
 }

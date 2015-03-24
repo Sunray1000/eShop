@@ -60,6 +60,10 @@
       <Project>{991ebdbe-0758-4f00-84a6-72f061a4db5f}</Project>
       <Name>eShop.DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\eShop.DomainClasses\eShop.DomainClasses.csproj">
+      <Project>{b988141f-1258-4466-af53-dcee43bc8c44}</Project>
+      <Name>eShop.DomainClasses</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

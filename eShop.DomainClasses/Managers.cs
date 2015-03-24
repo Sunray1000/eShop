@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -9,7 +10,8 @@ namespace eShop.DomainClasses
 {
     public class Managers
     {
-        public string UserName;
-        public SecureString password;
+        public int ManagerID { get; set; }
+        public string UserName { get; set; }
+        public SecureString Password { get; set; }
     }
 }

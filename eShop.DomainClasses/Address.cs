@@ -10,14 +10,13 @@ namespace eShop.DomainClasses
 {
     public class Address
     {
-        [Key] 
-        public int AddressId;
-        public string Name;
-        public string AddressLine1;
-        public string AddressLine2;
-        public string AddressLine3;
-        public string PostalZipCode;
-        public List<string> Country;
-        public AddressType AddressType;
+        public int AddressId { get; set; }
+        public string Name { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string AddressLine3 { get; set; }
+        public string PostalZipCode { get; set; }
+        public List<string> Country { get; set; }
+        public AddressType AddressType { get; set; }
     }
 }
