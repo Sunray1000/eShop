@@ -30,7 +30,7 @@ namespace TestProject
 			Assert.AreEqual("$2,000.12", money1.ToString());
 
 			//Default currency
-			Money money2 = new Money(3000m);
+			Money money2 = new Money(3000m,CurrencyCodes.ZAR);
 			Assert.AreEqual("ZAR", money2.CurrencyCode);
 			Assert.AreEqual("R", money2.CurrencySymbol);
 			Assert.AreEqual("South African Rand", money2.CurrencyName);
@@ -48,8 +48,8 @@ namespace TestProject
 			Assert.IsTrue(money3 == money4 && money4 == money5 && money5 == money6 && money6 == money7 && money7 == money8 && money8 == money9 && money9 == money10);
 
 			//Generic 3char currency code formatting instead of locale based with symbols
-			Assert.AreEqual("USD 2 000,12", money1.ToString(true));
-			Assert.AreEqual("ZAR 3 000,00", money2.ToString(true));
+			Assert.AreEqual("USD2,000.12", money1.ToString(true));
+			Assert.AreEqual("ZAR3,000.00", money2.ToString(true));
 
 		}
 
@@ -99,7 +99,7 @@ namespace TestProject
 			Assert.AreEqual("3,33 €", (money1 * (1.0 / 6.0)).ToString());
 
 			// Operators use internal value
-			Money money2 = new Money(0.01m);
+			Money money2 = new Money(0.01m,CurrencyCodes.ZAR);
 			Assert.AreEqual("R 0,01", (money2 / 2).ToString());
 
 			Money money3 = new Money(3, CurrencyCodes.EUR);
@@ -125,15 +125,15 @@ namespace TestProject
 		[TestMethod]
 		public void TestAllocation()
 		{
-			Money money1 = new Money(10);
+			Money money1 = new Money(10,CurrencyCodes.GBP);
 			Money[] allocatedMoney1 = money1.Allocate(3);
 			Money total1 = new Money();
 			for (int i = 0; i < allocatedMoney1.Length; i++)
 				total1 += allocatedMoney1[i];
-			Assert.AreEqual("R 10,00", total1.ToString());
-			Assert.AreEqual("R 3,34", allocatedMoney1[0].ToString());
-			Assert.AreEqual("R 3,33", allocatedMoney1[1].ToString());
-			Assert.AreEqual("R 3,33", allocatedMoney1[2].ToString());
+			Assert.AreEqual("£10.00", total1.ToString());
+			Assert.AreEqual("£3.34", allocatedMoney1[0].ToString());
+			Assert.AreEqual("£3.33", allocatedMoney1[1].ToString());
+			Assert.AreEqual("£3.33", allocatedMoney1[2].ToString());
 
 			Money money2 = new Money(0.09m, CurrencyCodes.USD);
 			Money[] allocatedMoney2 = money2.Allocate(5);

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopDataTesting", "eShopDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.DomainClasses", "eShop.DomainClasses\eShop.DomainClasses.csproj", "{B988141F-1258-4466-AF53-DCEE43BC8C44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.DataLayerTest", "eShop.DataLayerTest\eShop.DataLayerTest.csproj", "{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{B988141F-1258-4466-AF53-DCEE43BC8C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B988141F-1258-4466-AF53-DCEE43BC8C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B988141F-1258-4466-AF53-DCEE43BC8C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
