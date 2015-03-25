@@ -14,5 +14,6 @@ namespace eShop.DomainClasses
         public int ProductId { get; set; }
         public Product ProductOrdered { get; set; }
         public int Quantity { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

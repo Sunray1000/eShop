@@ -17,5 +17,6 @@ namespace eShop.DomainClasses
         public DateTime ReviewDateTime { get; set; }
         public string ReviewDescription { get; set; }
         public Rating StarRating { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

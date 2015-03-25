@@ -18,5 +18,6 @@ namespace eShop.DomainClasses
         public string PostalZipCode { get; set; }
         public List<string> Country { get; set; }
         public AddressType AddressType { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

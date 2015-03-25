@@ -43,5 +43,7 @@ namespace eShop.DomainClasses
             get { return _specification;}
             set { _specification = new List<string>(value); }
         }
+
+        public byte[] RowVersion { get; set; }
     }
 }

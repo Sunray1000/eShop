@@ -18,5 +18,6 @@ namespace eShop.DomainClasses
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public ContactDetailTypes ContactDetailType { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

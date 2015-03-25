@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using System.Linq;
 using eShop.DataLayer;
 using eShop.DataLayer.Migrations;
 using eShop.DomainClasses;
@@ -24,29 +26,30 @@ namespace eShop.DataLayerTest
         }
 
         [TestMethod]
-        //[ExpectedException()]
-        public void TestCustomerValidation()
+        [ExpectedException(typeof (DbEntityValidationException))]
+        public void TestCustomerMissingUserName()
         {
             using (var context = new eShopContext())
             {
-                //Customer customer = new Customer()
-                //{
-                //    UserName = "",
-                //    FirstName = "Alex",
-                //    LastName = "Macklen"
-                //};
 
-                //Address address = new Address()
-                //{
-                //    Name = "Delivery",
-                //    AddressLine1 = "Line1",
-                //    AddressLine2 = "Line2",
-                //    AddressType = AddressType.Billing
-                //};
+                Customer customer = new Customer()
+                {
+                    FirstName = "Alex",
+                    LastName = "Macklen"
+                };
 
-                //customer.Addresses.Add(address);
-                //context.Customers.Add(customer);
-                //context.SaveChanges();
+                customer.Addresses.Add(new Address()
+                {
+                    Name = "Delivery",
+                    AddressLine1 = "Line1",
+                    AddressLine2 = "Line2",
+                    AddressType = AddressType.Billing
+                });
+
+                context.Customers.Add(customer);
+                context.SaveChanges();
+
+                context.Customers.ToList();
             }
 
         }

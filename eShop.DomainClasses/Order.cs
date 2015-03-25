@@ -39,5 +39,7 @@ namespace eShop.DomainClasses
         {
             get { return _orderItems.Sum(); }
         }
+
+        public byte[] RowVersion { get; set; }
     }
 }

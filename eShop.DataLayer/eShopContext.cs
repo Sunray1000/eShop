@@ -24,8 +24,7 @@ namespace eShop.DataLayer
         public DbSet<Review> Reviews { get; set; }
 
         public eShopContext()
-        { 
-
+        {
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -37,21 +36,18 @@ namespace eShop.DataLayer
             modelBuilder.Configurations.Add(new OrderItemConfiguration());
             modelBuilder.ComplexType<Money>();
         }
-
-        
     }
-
 
 
     public class CustomerConfiguration : EntityTypeConfiguration<Customer>
     {
         public CustomerConfiguration()
         {
-            Property(c=>c.UserName).IsRequired();
-            Property(c => c.RowVersion).IsRowVersion();
+            Property(c => c.UserName).IsRequired().HasMaxLength(30);
             Property(c => c.CustomerId).HasColumnOrder(0);
             Property(c => c.FirstName).HasColumnOrder(1);
             Property(c => c.LastName).HasColumnOrder(2);
+            Property(c => c.RowVersion).IsRowVersion();
         }
     }
 
@@ -60,6 +56,8 @@ namespace eShop.DataLayer
         public AddressConfiguration()
         {
             Property(a => a.Name).IsRequired();
+            Property(a => a.AddressType).IsRequired();
+            Property(a => a.RowVersion).IsRowVersion();
         }
     }
 
@@ -68,6 +66,8 @@ namespace eShop.DataLayer
         public OrderConfiguration()
         {
             Property(o => o.AddressId).IsRequired();
+            Property(o => o.CustomerId).IsRequired();
+            Property(o => o.RowVersion).IsRowVersion();
         }
     }
 
@@ -77,6 +77,8 @@ namespace eShop.DataLayer
         public OrderItemConfiguration()
         {
             HasKey(oi => oi.OrderId);
+            Property(oi => oi.OrderId).IsRequired();
+            Property(oi => oi.RowVersion).IsRowVersion();
         }
     }
 
@@ -85,7 +87,30 @@ namespace eShop.DataLayer
         public ProductConfiguration()
         {
             HasKey(p => p.ProductId);
+            Property(p => p.RowVersion);
         }
     }
 
+    public class ContactDetailConfiguration : EntityTypeConfiguration<ContactDetail>
+    {
+        public ContactDetailConfiguration()
+        {
+            HasKey(cd => cd.ContactDetailId);
+            Property(cd => cd.RowVersion).IsRowVersion();
+            Property(cd => cd.ContactDescription).IsRequired();
+        }
+    }
+
+
+    public class ReviewConfiguration : EntityTypeConfiguration<Review>
+    {
+        public ReviewConfiguration()
+        {
+            HasKey(r => r.ReviewId);
+            Property(r => r.RowVersion).IsRowVersion();
+            Property(r => r.ReviewDescription).IsRequired();
+            Property(r => r.ReviewDateTime).IsRequired();
+        }
+    }
+    
 }
