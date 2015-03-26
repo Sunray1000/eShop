@@ -165,11 +165,31 @@ namespace eShop.DataLayerTest
 
                 OrderItem orderItem = new OrderItem()
                 {
-                    OrderId = order.OrderId,
                     ProductId = product.ProductId,
                     ProductOrdered = product,
                     Quantity = 1
                 };
+
+                order.OrderItems.Add(orderItem);
+
+
+                orderItem = new OrderItem()
+                {
+                    ProductId = product.ProductId,
+                    ProductOrdered = product,
+                    Quantity = 2
+                };
+
+                order.OrderItems.Add(orderItem);
+
+                orderItem = new OrderItem()
+                {
+                    ProductId = product.ProductId,
+                    ProductOrdered = product,
+                    Quantity = 3
+                };
+
+                order.OrderItems.Add(orderItem);
 
                 Customer customer = new Customer()
                 {

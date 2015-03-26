@@ -53,7 +53,6 @@ namespace eShop.DataLayer
             Property(c => c.FirstName).HasColumnOrder(1);
             Property(c => c.LastName).HasColumnOrder(2);
             Property(c => c.RowVersion).IsRowVersion().IsConcurrencyToken();
-            HasRequired(c => c.Addresses).WithMany().HasForeignKey(a => a.CustomerId);
         }
     }
 
@@ -75,7 +74,6 @@ namespace eShop.DataLayer
             Property(o => o.CustomerId).IsRequired();
             Property(o => o.OrderDateTime).IsRequired();
             Property(o => o.RowVersion).IsRowVersion().IsConcurrencyToken();
-            HasRequired(o => o.OrderItems).WithMany();
         }
     }
 
@@ -88,8 +86,6 @@ namespace eShop.DataLayer
             Property(oi => oi.OrderId).IsRequired();
             Property(oi => oi.RowVersion).IsRowVersion().IsConcurrencyToken();
             Property(oi => oi.ProductId).IsRequired();
-
-            HasRequired(oi => oi.ProductOrdered);
         }
     }
 
