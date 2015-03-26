@@ -12,10 +12,10 @@ namespace eShop.DomainClasses
 {
     public class Product
     {
-        Product()
+        public Product()
         {
-            _reviews = new List<Review>();
-            _specification = new List<string>();
+            Reviews = new List<Review>();
+            Specification = new List<string>();
             Price = new Money();
         }
 
@@ -28,21 +28,9 @@ namespace eShop.DomainClasses
         public string LongDescription { get; set; }
         public ProductCategories Category { get; set; }
         public Money Price { get; set; }
-        private List<string> _specification;
 
-        public int ReviewId { get; set; }
-        private List<Review> _reviews;
-        public ICollection<Review> Reviews
-        {
-            get { return _reviews;}
-            set { _reviews = new List<Review>(value); }
-        }
-
-        public ICollection<string> Specification
-        {
-            get { return _specification;}
-            set { _specification = new List<string>(value); }
-        }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<string> Specification { get; set; }
 
         public byte[] RowVersion { get; set; }
     }

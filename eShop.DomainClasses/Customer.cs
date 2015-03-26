@@ -15,7 +15,7 @@ namespace eShop.DomainClasses
         public Customer()
         {
             Addresses = new List<Address>();
-            _contactDetails = new List<ContactDetail>();
+            ContactDetails = new List<ContactDetail>();
             _customerReviews = new List<Review>();
         }
 
@@ -24,17 +24,10 @@ namespace eShop.DomainClasses
         public string LastName { get; set; }
         public string UserName { get; set; }
 
-        public ICollection<Address> Addresses { get; set; }
-
-        private List<ContactDetail> _contactDetails;
-        public ICollection<ContactDetail> ContactDetails
-        {
-            get { return _contactDetails; }
-            set { _contactDetails = (List<ContactDetail>) value; }
-        }
+        public virtual ICollection<Address> Addresses { get; set; }
+        public virtual ICollection<ContactDetail> ContactDetails { get; set; }
 
         private List<Review> _customerReviews;
-
         public ICollection<Review> CustomerReviews
         {
             get { return _customerReviews.Where(c => c.CustomerId == this.CustomerId).ToList(); }

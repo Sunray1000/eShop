@@ -20,24 +20,18 @@ namespace eShop.DomainClasses
 
         public Order()
         {
-            _orderItems = new List<OrderItem>();
+            OrderItems = new List<OrderItem>();
             OrderDateTime = DateTime.UtcNow;
         }
 
-        private List<OrderItem> _orderItems;
+        public virtual ICollection<OrderItem> OrderItems { get; set; } 
 
-        public ICollection<OrderItem> OrderItems
-        {
-            get { return _orderItems;}
-            set { _orderItems = (List<OrderItem>)value; }
-        }
-
-        public int AddressId { get; set; }
+        public int DeliveryAddressId { get; set; }
         public Address DeliveryAddress { get; set; }
 
         public Money TotalPrice
         {
-            get { return _orderItems.Sum(); }
+            get { return OrderItems.Sum(oi=>oi.Quantity*oi.ProductOrdered.Price.Amount); }
         }
 
         public byte[] RowVersion { get; set; }
