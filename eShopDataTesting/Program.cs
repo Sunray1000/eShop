@@ -19,7 +19,6 @@ namespace eShopDataTesting
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<eShopContext,Configuration>());
             ICollection<Customer> customers = GetCustomers();
 
-
             foreach (var customer in customers)
             {
                 Console.WriteLine("Customer Name = {0}", customer.FirstName + " " + customer.LastName);
@@ -33,10 +32,16 @@ namespace eShopDataTesting
         {
             using (var context = new eShopContext())
             {
-                return context.Customers.ToList();
+                try
+                {
+                    return context.Customers.ToList();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
         }
     }
-
 
 }

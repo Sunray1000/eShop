@@ -8,25 +8,22 @@ using Useful.Money;
 
 namespace eShop.DomainClasses
 {
-    public class Order
+    public class Order : ItemState
     {
         [Key]
         public int OrderId { get; set; }
 
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
         public Customer Customer { get; set; }
-
-        public DateTime OrderDateTime { get; set; }
 
         public Order()
         {
             OrderItems = new List<OrderItem>();
-            OrderDateTime = DateTime.UtcNow;
         }
 
         public virtual ICollection<OrderItem> OrderItems { get; set; } 
 
-        public int DeliveryAddressId { get; set; }
+        public int? DeliveryAddressId { get; set; }
         public Address DeliveryAddress { get; set; }
 
         public Money TotalPrice

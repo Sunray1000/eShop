@@ -10,7 +10,7 @@ using Useful.Money;
 
 namespace eShop.DomainClasses
 {
-    public class Product
+    public class Product : ItemState
     {
         public Product()
         {

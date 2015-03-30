@@ -48,6 +48,7 @@
     <Compile Include="enums\Manufactures.cs" />
     <Compile Include="enums\ProductCategories.cs" />
     <Compile Include="enums\Rating.cs" />
+    <Compile Include="ItemState.cs" />
     <Compile Include="Managers.cs" />
     <Compile Include="MoneyExtension.cs" />
     <Compile Include="Order.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using eShop.DataLayer;
@@ -135,8 +136,8 @@ namespace eShop.DataLayerTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof (DbEntityValidationException))]
-        public void TestOrderCustomerIdMissing()
+        [ExpectedException(typeof(DbUpdateException))]
+        public void TestOrderMissingCustomerId()
         {
             using (var context = new eShopContext())
             {
@@ -206,7 +207,17 @@ namespace eShop.DataLayerTest
             }
         }
 
+        public class Test
+        {
 
+            public Test()
+            {
+                while (true)
+                {
+                    
+                }
+            }
+        }  
     }
 }
 

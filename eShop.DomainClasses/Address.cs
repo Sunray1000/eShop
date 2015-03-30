@@ -8,7 +8,7 @@ using eShop.enums;
 
 namespace eShop.DomainClasses
 {
-    public class Address
+    public class Address : ItemState
     {
         public int AddressId { get; set; }
         public int CustomerId { get; set; }

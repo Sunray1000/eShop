@@ -10,7 +10,7 @@ using eShop.enums;
 
 namespace eShop.DomainClasses
 {
-    public class Customer
+    public class Customer : ItemState
     {
         private ICollection<Address> _addresses;
         private ICollection<Review> _customerReviews;

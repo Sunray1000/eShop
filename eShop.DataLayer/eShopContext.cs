@@ -29,6 +29,15 @@ namespace eShop.DataLayer
         {
         }
 
+        public override int SaveChanges()
+        {
+            foreach (var entityState in )
+            {
+        
+            }
+            return base.SaveChanges();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -72,7 +81,6 @@ namespace eShop.DataLayer
         {
             Property(o => o.DeliveryAddressId).IsRequired();
             Property(o => o.CustomerId).IsRequired();
-            Property(o => o.OrderDateTime).IsRequired();
             Property(o => o.RowVersion).IsRowVersion().IsConcurrencyToken();
         }
     }

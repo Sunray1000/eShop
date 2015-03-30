@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace eShop.DomainClasses
 {
-    public class Managers
+    public class Managers : ItemState
     {
         public int ManagerID { get; set; }
         public string UserName { get; set; }

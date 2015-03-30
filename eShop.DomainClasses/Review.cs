@@ -10,7 +10,6 @@ namespace eShop.DomainClasses
 {
     public class Review
     {
-        [Key]
         public int ReviewId { get; set; }
         public Customer Customer { get; set; }
         public int CustomerId { get; set; }

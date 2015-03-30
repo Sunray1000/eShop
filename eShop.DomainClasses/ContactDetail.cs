@@ -10,7 +10,7 @@ using eShop.DomainClasses.enums;
 
 namespace eShop.DomainClasses
 {
-    public class ContactDetail
+    public class ContactDetail : ItemState
     {
         public int ContactDetailId { get; set; }
         public int CustomerId { get; set; }
