@@ -59,3 +59,5 @@ D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\Useful.Money.dll
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\eShop.DataLayer.pdb
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\eShop.DomainClasses.pdb
 D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\Useful.Money.pdb
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\log4net.dll
+D:\Users\Alex\Dropbox\Visual Studio Projects\eShop\eShop\bin\log4net.xml

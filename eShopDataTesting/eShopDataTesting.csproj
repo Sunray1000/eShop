@@ -38,6 +38,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -52,7 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +68,10 @@
     <ProjectReference Include="..\eShop.DomainClasses\eShop.DomainClasses.csproj">
       <Project>{b988141f-1258-4466-af53-dcee43bc8c44}</Project>
       <Name>eShop.DomainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eShop.LoggingConfiguration\eShop.LoggingConfiguration.csproj">
+      <Project>{4066d68c-12e5-4615-94b9-4b5561edba34}</Project>
+      <Name>eShop.LoggingConfiguration</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

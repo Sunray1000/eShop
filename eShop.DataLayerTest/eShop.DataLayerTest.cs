@@ -160,7 +160,6 @@ namespace eShop.DataLayerTest
 
                 Order order = new Order()
                 {
-                    OrderDateTime = DateTime.UtcNow,
                     DeliveryAddressId = address.AddressId
                 };
 

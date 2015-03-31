@@ -8,6 +8,6 @@ namespace eShop.DomainClasses
 {
     public class ItemState
     {
-        DateTime ModifiedDateTime { get; set; }
+        public DateTime ModifiedDateTime { get; set; }
     }
 }

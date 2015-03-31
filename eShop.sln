@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.DomainClasses", "eSho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.DataLayerTest", "eShop.DataLayerTest\eShop.DataLayerTest.csproj", "{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.LoggingConfiguration", "eShop.LoggingConfiguration\eShop.LoggingConfiguration.csproj", "{4066D68C-12E5-4615-94B9-4B5561EDBA34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81549BAB-B1B9-45AC-AEEF-AEEE507CAEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4066D68C-12E5-4615-94B9-4B5561EDBA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4066D68C-12E5-4615-94B9-4B5561EDBA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4066D68C-12E5-4615-94B9-4B5561EDBA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4066D68C-12E5-4615-94B9-4B5561EDBA34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -27,14 +27,16 @@ namespace eShop.DataLayer
 
         public eShopContext()
         {
+           
         }
 
         public override int SaveChanges()
         {
-            foreach (var entityState in )
+            foreach (var itemState in ChangeTracker.Entries().Where(e=>e.Entity is ItemState && (e.State == EntityState.Added || e.State == EntityState.Modified)).Select(e=>e.Entity as ItemState))
             {
-        
+                itemState.ModifiedDateTime = DateTime.UtcNow;
             }
+
             return base.SaveChanges();
         }
 
