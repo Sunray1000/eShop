@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
@@ -8,14 +9,16 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using eShop.DataLayer;
-using eShop.DataLayer.Migrations;
 using eShop.DomainClasses;
 using eShop.LoggingConfiguration;
 using log4net;
 using log4net.Config;
 using log4net.Repository.Hierarchy;
+using System.Data.SqlClient;
+using System.Globalization;
+using Configuration = eShop.DataLayer.Migrations.Configuration;
 
-[assembly: XmlConfigurator]
+[assembly: XmlConfigurator(Watch=true)]
 
 namespace eShopDataTesting
 {
@@ -24,7 +27,6 @@ namespace eShopDataTesting
 
         static void Main(string[] args)
         {
-            //LoggingConfiguration.ConfigureLogger();
             var log = LogManager.GetLogger(typeof (Program));
 
             log.Info("Starting Application");
