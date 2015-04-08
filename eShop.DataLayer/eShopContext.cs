@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -32,12 +33,31 @@ namespace eShop.DataLayer
 
         public override int SaveChanges()
         {
-            foreach (var itemState in ChangeTracker.Entries().Where(e=>e.Entity is ItemState && (e.State == EntityState.Added || e.State == EntityState.Modified)).Select(e=>e.Entity as ItemState))
+
+            try
             {
-                itemState.ModifiedDateTime = DateTime.UtcNow;
+                foreach (var itemState in ChangeTracker.Entries().
+                    Where(e=>e.Entity is ItemState && 
+                             (e.State == EntityState.Added || 
+                              e.State == EntityState.Modified)).Select(e=>e.Entity as ItemState))
+                {
+                    itemState.ModifiedDateTime = DateTime.UtcNow;
+                }
+
+                return base.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var dbEntityValidationResult in e.EntityValidationErrors)
+                {
+                    foreach (var dbValidationError in dbEntityValidationResult.ValidationErrors)
+                    {
+                        Console.WriteLine("Validation error {0}",dbValidationError.ErrorMessage);
+                    }
+                }
             }
 
-            return base.SaveChanges();
+            return 0;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

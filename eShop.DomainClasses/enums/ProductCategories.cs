@@ -10,10 +10,11 @@ namespace eShop.enums
     {
         HardDisk = 1,
         Case = 2,
-        Kwyboard = 3,
+        Keyboard = 3,
         Mouse = 4,
         Monitors = 5,
         CPU = 6,
-        Memory = 7
+        Memory = 7,
+        Printer
     }
 }
