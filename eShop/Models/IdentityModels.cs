@@ -29,5 +29,7 @@ namespace eShop.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<eShop.DomainClasses.Customer> Customers { get; set; }
     }
 }

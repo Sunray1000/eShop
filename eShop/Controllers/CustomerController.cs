@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using eShop.DataLayer;
 using eShop.DomainClasses;
 using eShop.Repository;
 
@@ -10,10 +11,12 @@ namespace eShop.Controllers
 {
     public class CustomerController : Controller
     {
+        private readonly eShopContext _eShopDb = new eShopContext();
+
         // GET: Customer
         public ActionResult Index()
         {
-            CustomerRepository customerRepository = new CustomerRepository();
+            CustomerRepository customerRepository = new CustomerRepository(_eShopDb);
             List<Customer> customers = customerRepository.GetCustomers();
             return View(customers);
         }
@@ -21,12 +24,13 @@ namespace eShop.Controllers
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Customer customer = _eShopDb.Customers.Find(id);
+            return View(customer);
         }
 
         public ActionResult Search(string name)
         {
-            CustomerRepository customerRepository = new CustomerRepository();
+            CustomerRepository customerRepository = new CustomerRepository(_eShopDb);
             Customer customer = customerRepository.GetCustomer(name);
             return View(customer);
         }
@@ -44,7 +48,10 @@ namespace eShop.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                foreach (Customer customer in collection)
+                {
+                    _eShopDb.Customers.Add(customer);
+                }
 
                 return RedirectToAction("Index");
             }
