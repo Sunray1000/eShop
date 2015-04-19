@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using eShop.DataLayer;
 using eShop.DomainClasses;
 using eShop.Repository;
+using Microsoft.Owin.Security.DataHandler.Encoder;
 
 namespace eShop.Controllers
 {
@@ -34,9 +37,10 @@ namespace eShop.Controllers
             Customer customer = customerRepository.GetCustomer(name);
             return View(customer);
         }
-        
+
 
         // GET: Customer/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -44,40 +48,47 @@ namespace eShop.Controllers
 
         // POST: Customer/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Customer customer)
         {
             try
             {
-                foreach (Customer customer in collection)
+                if (ModelState.IsValid)
                 {
                     _eShopDb.Customers.Add(customer);
+                    _eShopDb.SaveChanges();
                 }
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View("Problem");
             }
         }
 
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Customer customer = _eShopDb.Customers.Find(id);
+            return View("Edit", customer);
         }
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Customer customer)
         {
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    _eShopDb.Entry(customer).State = EntityState.Modified;
+                    _eShopDb.SaveChanges();
+                    return RedirectToAction("Index", new { id = customer.CustomerId });
+                }
 
-                return RedirectToAction("Index");
+                return View(customer);
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
@@ -86,18 +97,22 @@ namespace eShop.Controllers
         // GET: Customer/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_eShopDb.Customers.Find(id));
         }
 
         // POST: Customer/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Customer customer)
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    _eShopDb.Entry(customer).State = EntityState.Deleted;
+                    _eShopDb.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
             catch
             {

@@ -12,11 +12,6 @@ namespace eShop
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapRoute(
-                name: "Customer",
-                url: "customer/{name}",
-                defaults: new {controller = "Customer", action = "Search"}
-                );
 
             routes.MapRoute(
                 name: "Default",
