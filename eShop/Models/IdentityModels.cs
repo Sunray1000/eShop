@@ -31,5 +31,7 @@ namespace eShop.Models
         }
 
         public System.Data.Entity.DbSet<eShop.DomainClasses.Customer> Customers { get; set; }
+
+        public System.Data.Entity.DbSet<eShop.DomainClasses.Product> Products { get; set; }
     }
 }
