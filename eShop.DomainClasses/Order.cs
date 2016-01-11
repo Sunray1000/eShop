@@ -21,6 +21,7 @@ namespace eShop.DomainClasses
             OrderItems = new List<OrderItem>();
         }
 
+        public int OrderItemsId { get; set; }   
         public virtual ICollection<OrderItem> OrderItems { get; set; } 
 
         public int? DeliveryAddressId { get; set; }

@@ -16,7 +16,7 @@ namespace eShop
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<eShopContext, DataLayer.Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<eShopContext, eShop.DataLayer.Migrations.Configuration>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using eShop.enums;
 using Useful.Money;
 
@@ -26,11 +20,19 @@ namespace eShop.DomainClasses
         public string Colour { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
-        public ProductCategories Category { get; set; }
         public Money Price { get; set; }
 
+        // Link to reviews by people for this product   
+        public int ReviewId { get; set; }   
         public virtual ICollection<Review> Reviews { get; set; }
+
+        // Link to the specification
+        public int SpecificationId { get; set; }    
         public virtual ICollection<string> Specification { get; set; }
+
+        //The category link
+        public int CategoryId { get; set; } 
+        public virtual ICollection<ProductCategory> Category { get; set; }
 
         public byte[] RowVersion { get; set; }
     }

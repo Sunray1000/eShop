@@ -5,7 +5,6 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using eShop.DataLayer;
-using eShop.DataLayer.Migrations;
 using eShop.DomainClasses;
 using eShop.DomainClasses.enums;
 using eShop.enums;
@@ -64,7 +63,7 @@ namespace eShop.DataLayerTest
             Address address = new Address()
             {
                 AddressLine1 = "Address line 1",
-                AddressLine3 = "Address line 3",
+                //AddressLine3 = "Address line 3",
                 AddressType = AddressType.Delivery
             };
 
@@ -143,7 +142,6 @@ namespace eShop.DataLayerTest
             {
                 Product product = new Product()
                 {
-                    Category = ProductCategories.CPU,
                     Colour = "Red",
                     Name = "Hard Disk",
                     Price = new Money(100m),

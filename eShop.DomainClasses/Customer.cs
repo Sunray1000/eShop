@@ -28,17 +28,20 @@ namespace eShop.DomainClasses
         public string LastName { get; set; }
         public string UserName { get; set; }
 
+        public int AddressId { get; set; }
         public virtual ICollection<Address> Addresses 
         { 
             get { return _addresses; } 
             set { _addresses = value; } 
         }
+        public int ContactDetailId { get; set; }
         public virtual ICollection<ContactDetail> ContactDetails 
         { 
             get { return _contactDetails;}
             set { _contactDetails = value; } 
         }
 
+        public int ReviewId { get; set; }
         public ICollection<Review> CustomerReviews
         {
             get { return _customerReviews.Where(c => c.CustomerId == this.CustomerId).ToList(); }

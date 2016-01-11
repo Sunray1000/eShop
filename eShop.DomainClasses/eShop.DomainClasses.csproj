@@ -52,7 +52,6 @@
     <Compile Include="enums\AddressType.cs" />
     <Compile Include="enums\ContactDetailTypes.cs" />
     <Compile Include="enums\Manufactures.cs" />
-    <Compile Include="enums\ProductCategories.cs" />
     <Compile Include="enums\Rating.cs" />
     <Compile Include="ItemState.cs" />
     <Compile Include="Managers.cs" />
@@ -60,6 +59,7 @@
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
   </ItemGroup>

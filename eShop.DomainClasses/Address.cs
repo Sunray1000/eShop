@@ -15,7 +15,7 @@ namespace eShop.DomainClasses
         public string Name { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
-        public string AddressLine3 { get; set; }
+        //public string AddressLine3 { get; set; }
         public string PostalZipCode { get; set; }
         public List<string> Country { get; set; }
         public AddressType AddressType { get; set; }

@@ -1,22 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using eShop.DataLayer;
 using eShop.DomainClasses;
-using eShop.LoggingConfiguration;
 using log4net;
 using log4net.Config;
-using log4net.Repository.Hierarchy;
-using System.Data.SqlClient;
-using System.Globalization;
-using Configuration = eShop.DataLayer.Migrations.Configuration;
+using eShop;
 
 [assembly: XmlConfigurator(Watch=true)]
 
@@ -31,7 +22,7 @@ namespace eShopDataTesting
 
             log.Info("Starting Application");
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<eShopContext,Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<eShopContext,eShop.DataLayer.Migrations.Configuration>());
             ICollection<Customer> customers = GetCustomers();
 
             foreach (var customer in customers)

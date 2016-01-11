@@ -25,6 +25,7 @@ namespace eShop.DataLayer
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<ProductCategory> Categories { get; set; }
 
         public eShopContext()
         {
@@ -70,6 +71,7 @@ namespace eShop.DataLayer
             modelBuilder.Configurations.Add(new ContactDetailConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new ReviewConfiguration());
+            modelBuilder.Configurations.Add(new ProductCategoryConfiguration());
             modelBuilder.ComplexType<Money>();
         }
     }
@@ -124,7 +126,6 @@ namespace eShop.DataLayer
         public ProductConfiguration()
         {
             HasKey(p => p.ProductId);
-            Property(p => p.RowVersion);
         }
     }
 
@@ -146,6 +147,15 @@ namespace eShop.DataLayer
             Property(r => r.RowVersion).IsRowVersion().IsConcurrencyToken();
             Property(r => r.ReviewDescription).IsRequired();
             Property(r => r.ReviewDateTime).IsRequired();
+        }
+    }
+
+    public class ProductCategoryConfiguration : EntityTypeConfiguration<ProductCategory>
+    {
+        public ProductCategoryConfiguration()
+        {
+            HasKey(p => p.ProductCategoryId);
+            Property(p => p.ProductCategoryName);
         }
     }
     
