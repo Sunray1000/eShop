@@ -1,15 +1,16 @@
-﻿@{
+﻿@using eShop.DataLayer
+@{
     ViewBag.Title = "Home Page";
 }
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">
             <img src="../../Content/stuff.png" alt="Stuff! the name of the website."/>
-            A demo application
         </h3>
+        <p class="panel-body" >We sell computer things, oh yes we do!!</p>
     </div>
 </div>
-
+@Html.Partial("_Categories",new eShopContext());
 
 <div></div>
 
