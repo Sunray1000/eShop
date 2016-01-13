@@ -1,4 +1,8 @@
 using System;
+using System.ComponentModel;
+using System.Web.Mvc;
+using System.Web.Routing;
+using System.Web.SessionState;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 
@@ -35,8 +39,27 @@ namespace eShop.App_Start
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
-            // TODO: Register your types here
-            // container.RegisterType<IProductRepository, ProductRepository>();
+           
+            //container.RegisterType<IProductRepository, ProductRepository>().
         }
     }
+
+    public class UnityControllerFactory : DefaultControllerFactory
+    {
+        private readonly IUnityContainer _container;
+
+        public UnityControllerFactory(IUnityContainer container)
+        {
+            _container = container;
+        }
+
+        protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
+        {
+            if (controllerType == null)
+                return null;
+
+            return (IController) _container.Resolve(controllerType);
+        }
+    }
+
 }
